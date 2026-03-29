@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
+    "postinstall": "prisma generate",
     "predeploy": "npm run lint && npm run typecheck && npm run build",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
