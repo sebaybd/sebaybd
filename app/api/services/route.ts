@@ -65,7 +65,7 @@ export async function GET(request: NextRequest) {
         },
       });
 
-      const mapped = services.map((service) => ({
+      const mapped = services.map((service: (typeof services)[number]) => ({
         id: service.id,
         title: service.title,
         slug: service.slug,
