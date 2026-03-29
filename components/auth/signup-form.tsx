@@ -121,7 +121,6 @@ export function SignUpForm() {
         >
           <option value="CUSTOMER">User</option>
           <option value="PROVIDER">Provider</option>
-          <option value="ADMIN">Admin</option>
         </select>
         {role === "ADMIN" ? (
           <p className="mt-1 text-xs text-stone-500">Only {adminEmail} can create an admin account.</p>

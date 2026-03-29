@@ -12,7 +12,7 @@ export default function SignUpPage() {
       <div className="mx-auto w-full max-w-md rounded-2xl border border-stone-200 bg-white p-6">
         <h1 className="text-2xl font-bold">Create Account</h1>
         <p className="mt-2 text-sm text-stone-600">
-          Register as User, Provider, or Admin. Provider accounts require admin approval before login.
+          Register as User or Provider. Provider accounts require admin approval before login.
         </p>
 
         <div className="mt-5">
