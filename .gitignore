@@ -29,6 +29,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+dev-error.log
+prisma-push.log
+build-output.log
+build-check.log
 
 # env files (can opt-in for committing if needed)
 .env*
