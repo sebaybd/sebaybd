@@ -22,6 +22,24 @@ const serviceCreateSchema = z.object({
   image: z.string().url().optional(),
 });
 
+type ServiceApiItem = {
+  id: string;
+  title: string;
+  slug: string;
+  description: string;
+  categorySlug: string;
+  providerId: string;
+  priceFrom: number;
+  priceTo?: number;
+  division: string;
+  district: string;
+  area: string;
+  latitude?: number;
+  longitude?: number;
+  tags: string[];
+  image: string;
+};
+
 export async function GET(request: NextRequest) {
   const q = request.nextUrl.searchParams.get("q")?.toLowerCase();
   const category = request.nextUrl.searchParams.get("category");
@@ -65,7 +83,7 @@ export async function GET(request: NextRequest) {
         },
       });
 
-      const mapped = services.map((service: (typeof services)[number]) => ({
+      const mapped: ServiceApiItem[] = services.map((service: (typeof services)[number]) => ({
         id: service.id,
         title: service.title,
         slug: service.slug,
@@ -83,7 +101,7 @@ export async function GET(request: NextRequest) {
         image: service.images[0] ?? "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80",
       }));
 
-      const nearFiltered = mapped.filter((service) => {
+      const nearFiltered = mapped.filter((service: ServiceApiItem) => {
         if (!useNearMe) return true;
         return (
           service.latitude &&

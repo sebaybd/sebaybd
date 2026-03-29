@@ -21,7 +21,7 @@ export function EarningsSummary({
       
       <div className="space-y-4">
         {/* Monthly Earnings */}
-        <div className="rounded-lg bg-gradient-to-r from-blue-50 to-blue-100 p-4 border border-blue-200">
+        <div className="rounded-lg bg-linear-to-r from-blue-50 to-blue-100 p-4 border border-blue-200">
           <p className="text-sm text-blue-700 font-semibold">This Month</p>
           <p className="text-3xl font-bold text-blue-900 mt-2">৳ {monthlyEarnings.toLocaleString()}</p>
         </div>
