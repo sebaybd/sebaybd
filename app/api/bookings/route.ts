@@ -4,10 +4,10 @@ import { sampleBookings } from "@/lib/sample-data";
 import { prisma } from "@/lib/prisma";
 import { shouldUseSampleData } from "@/lib/data-source";
 import { readMockStore, updateMockStore } from "@/lib/mock-store";
+import { auth } from "@/auth";
 
 const bookingSchema = z.object({
   serviceId: z.string().min(1),
-  customerId: z.string().min(1),
   providerId: z.string().min(1).optional(),
   scheduledAt: z.string().min(5),
   problemText: z.string().min(5),
@@ -47,6 +47,13 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
+  const session = await auth();
+  const customerId = session?.user?.id;
+
+  if (!customerId) {
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  }
+
   const body = await request.json();
   const parsed = bookingSchema.safeParse(body);
 
@@ -61,7 +68,7 @@ export async function POST(request: NextRequest) {
     const booking = {
       id: crypto.randomUUID(),
       serviceId: parsed.data.serviceId,
-      customerName: parsed.data.customerId,
+      customerName: customerId,
       providerName: provider?.name ?? "Provider",
       scheduledAt: parsed.data.scheduledAt,
       status: "PENDING" as const,
@@ -97,7 +104,7 @@ export async function POST(request: NextRequest) {
     const booking = await prisma.booking.create({
       data: {
         serviceId: parsed.data.serviceId,
-        customerId: parsed.data.customerId,
+        customerId,
         providerId,
         problemText: parsed.data.problemText,
         scheduledAt: new Date(parsed.data.scheduledAt),

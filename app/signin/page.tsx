@@ -19,7 +19,7 @@ export default function SignInPage() {
 
         <div className="mt-5 rounded-xl border border-stone-200 bg-stone-50 p-3 text-xs text-stone-700">
           <p className="font-semibold">New here?</p>
-          <p className="mt-1">Create an account as User or Provider. Only sebaybd@gmail.com can register as Admin.</p>
+          <p className="mt-1">Create an account as User or Provider.</p>
           <Link href="/signup" className="mt-2 inline-block font-semibold text-(--brand)">
             Go to registration
           </Link>

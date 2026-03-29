@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { readMockStore } from "@/lib/mock-store";
+import { BookingForm } from "@/components/services/booking-form";
 
 interface ServiceDetailProps {
   params: Promise<{ slug: string }>;
@@ -77,9 +78,15 @@ export default async function ServiceDetailPage({ params }: ServiceDetailProps) 
           <p className="mt-3 font-semibold">{provider?.name ?? "Provider"}</p>
           <p className="text-sm text-stone-600">{provider?.title}</p>
           <p className="mt-2 text-sm">⭐ {provider?.rating ?? 0} ({provider?.reviewCount ?? 0} reviews)</p>
-          <button className="mt-5 w-full rounded-xl bg-(--brand) px-4 py-3 text-sm font-semibold text-white">
-            Book This Service
-          </button>
+          <div className="mt-5">
+            <BookingForm
+              serviceId={service.id}
+              providerId={service.providerId}
+              serviceName={service.title}
+              priceFrom={service.priceFrom}
+              priceTo={service.priceTo}
+            />
+          </div>
         </aside>
       </div>
     </section>
