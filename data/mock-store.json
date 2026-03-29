@@ -1,0 +1,144 @@
+{
+  "categories": [
+    { "id": "c1", "name": "Home Services", "slug": "home-services" },
+    { "id": "c2", "name": "Plumber", "slug": "plumber", "parentSlug": "home-services" },
+    { "id": "c3", "name": "Electrician", "slug": "electrician", "parentSlug": "home-services" },
+    { "id": "c4", "name": "IT Services", "slug": "it-services" },
+    { "id": "c5", "name": "Repair Services", "slug": "repair-services" },
+    { "id": "c6", "name": "Education", "slug": "education" },
+    { "id": "c7", "name": "Health", "slug": "health" },
+    { "id": "c8", "name": "Beauty & Salon", "slug": "beauty-salon" },
+    { "id": "c9", "name": "Transport", "slug": "transport" },
+    { "id": "c10", "name": "Events", "slug": "events" }
+  ],
+  "providers": [
+    {
+      "id": "p1",
+      "name": "Rahim Electric Care",
+      "title": "Certified Home Electrician",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Mirpur",
+      "rating": 4.8,
+      "reviewCount": 182,
+      "approved": true,
+      "image": "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "p2",
+      "name": "CoolFix AC Team",
+      "title": "AC Repair & Maintenance",
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Uttara",
+      "rating": 4.7,
+      "reviewCount": 136,
+      "approved": true,
+      "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "p3",
+      "name": "Shiksha Tutors BD",
+      "title": "Home & Online Tutors",
+      "division": "Chattogram",
+      "district": "Chattogram",
+      "area": "Panchlaish",
+      "rating": 4.9,
+      "reviewCount": 214,
+      "approved": true,
+      "image": "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=80"
+    }
+  ],
+  "services": [
+    {
+      "id": "s1",
+      "title": "AC Not Cooling Diagnosis & Repair",
+      "slug": "ac-not-cooling-diagnosis-repair",
+      "description": "Quick inspection, gas refill recommendation, and cooling restoration.",
+      "categorySlug": "repair-services",
+      "providerId": "p2",
+      "priceFrom": 800,
+      "priceTo": 2500,
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Uttara",
+      "latitude": 23.8759,
+      "longitude": 90.3795,
+      "tags": ["ac", "cooling", "repair"],
+      "image": "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "s2",
+      "title": "Home Electric Line Fixing",
+      "slug": "home-electric-line-fixing",
+      "description": "Short circuit detection, wiring fixes, and safety checks.",
+      "categorySlug": "electrician",
+      "providerId": "p1",
+      "priceFrom": 500,
+      "priceTo": 2200,
+      "division": "Dhaka",
+      "district": "Dhaka",
+      "area": "Mirpur",
+      "latitude": 23.8223,
+      "longitude": 90.3654,
+      "tags": ["electric", "wiring", "home"],
+      "image": "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "s3",
+      "title": "Class 9-12 Science Tutor",
+      "slug": "class-9-12-science-tutor",
+      "description": "Experienced tutor for Math, Physics, and Chemistry in Bangla/English medium.",
+      "categorySlug": "education",
+      "providerId": "p3",
+      "priceFrom": 3500,
+      "priceTo": 9000,
+      "division": "Chattogram",
+      "district": "Chattogram",
+      "area": "Panchlaish",
+      "latitude": 22.3569,
+      "longitude": 91.8252,
+      "tags": ["tutor", "science", "education"],
+      "image": "https://images.unsplash.com/photo-1529074963764-98f45c47344b?auto=format&fit=crop&w=900&q=80"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "b1",
+      "serviceId": "s1",
+      "customerName": "Nafisa",
+      "providerName": "CoolFix AC Team",
+      "scheduledAt": "2026-03-24T10:00:00.000Z",
+      "status": "PENDING",
+      "problemText": "My AC is not cooling"
+    },
+    {
+      "id": "b2",
+      "serviceId": "s2",
+      "customerName": "Arif",
+      "providerName": "Rahim Electric Care",
+      "scheduledAt": "2026-03-15T10:00:00.000Z",
+      "status": "COMPLETED",
+      "problemText": "Switchboard sparks when I turn on fan"
+    }
+  ],
+  "messages": [
+    {
+      "id": "m1",
+      "bookingId": "b1",
+      "from": "Nafisa",
+      "to": "CoolFix AC Team",
+      "content": "Can you come after 4pm?",
+      "createdAt": "2026-03-22T08:00:00.000Z"
+    },
+    {
+      "id": "m2",
+      "bookingId": "b1",
+      "from": "CoolFix AC Team",
+      "to": "Nafisa",
+      "content": "Yes, our technician will arrive between 4:30-5pm.",
+      "createdAt": "2026-03-22T08:10:00.000Z"
+    }
+  ],
+  "reviews": []
+}
