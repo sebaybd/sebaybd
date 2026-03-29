@@ -53,7 +53,7 @@ export default async function AdminDashboardPage() {
       take: 50,
     });
 
-    pendingProviders = profiles.map((profile) => ({
+    pendingProviders = profiles.map((profile: (typeof profiles)[number]) => ({
       providerProfileId: profile.id,
       userId: profile.user.id,
       name: profile.user.name,
