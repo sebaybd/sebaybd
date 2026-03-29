@@ -33,6 +33,7 @@ dev-error.log
 prisma-push.log
 build-output.log
 build-check.log
+predeploy.log
 
 # env files (can opt-in for committing if needed)
 .env*
