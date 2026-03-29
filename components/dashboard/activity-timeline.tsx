@@ -1,9 +1,9 @@
 "use client";
 
-import { Booking } from "@/types/marketplace";
+import { BookingSummary } from "@/types/marketplace";
 
 interface ActivityTimelineProps {
-  bookings: Booking[];
+  bookings: BookingSummary[];
 }
 
 export function ActivityTimeline({ bookings }: ActivityTimelineProps) {
